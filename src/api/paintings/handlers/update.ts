@@ -1,5 +1,5 @@
 import { PaintingHandlers } from '../interface';
-import prisma from '../../../client';
+import prisma from '../../../../client';
 
 const updatePainting: PaintingHandlers['update'] = async (req, res) => {
   const { id } = req.params;

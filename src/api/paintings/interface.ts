@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 import { Painting } from '@prisma/client';
-import ResponseError from '../api/responseError';
+import ResponseError from '../responseError';
 
 type PaintingBodyCreate = {
   name: string;

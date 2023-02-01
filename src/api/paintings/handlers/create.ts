@@ -1,8 +1,8 @@
 import { PaintingHandlers } from '../interface';
-import prisma from '../../../client';
+import prisma from '../../../../client';
 
 const createPainting: PaintingHandlers['create'] = async (req, res) => {
-  const { name, price, isSold, content, imageUrl } = req.body;
+  const { name, price, isSold, content, imageUrl, categoryId } = req.body;
   try {
     const painting = await prisma.painting.create({
       data: {
@@ -11,6 +11,7 @@ const createPainting: PaintingHandlers['create'] = async (req, res) => {
         isSold,
         content,
         imageUrl,
+        categoryId,
       },
     });
     res.status(201).json(painting);
