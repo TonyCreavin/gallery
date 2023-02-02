@@ -10,7 +10,7 @@ const updatePainting: PaintingHandlers['update'] = async (req, res) => {
       data: {
         name,
         price,
-        isSold,
+        isSold: isSold === 'true' ? true : false,
         imageUrl,
         content,
         categoryId,
