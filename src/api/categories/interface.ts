@@ -5,10 +5,17 @@ import ResponseError from '../responseError';
 type CategoryBodyCreate = {
   name: string;
 };
-
+type QueryParam = {
+  painting?: 'include';
+};
 export interface CategoryHandlers {
-  getAll: RequestHandler<null, Category[] | ResponseError, null>;
-  getOne: RequestHandler<{ id: string }, Category | ResponseError, null>;
+  getAll: RequestHandler<null, Category[] | ResponseError, null, QueryParam>;
+  getOne: RequestHandler<
+    { id: string },
+    Category | ResponseError,
+    null,
+    QueryParam
+  >;
   create: RequestHandler<null, Category | ResponseError, CategoryBodyCreate>;
   update: RequestHandler<
     { id: string },
